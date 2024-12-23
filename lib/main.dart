@@ -14,7 +14,11 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       title: 'Movies',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange
+        primarySwatch: Colors.deepOrange,
+            appBarTheme: AppBarTheme(
+          backgroundColor: Colors.deepOrange,
+              foregroundColor: Colors.white
+      )
       ),
       home: Home(),
     );
