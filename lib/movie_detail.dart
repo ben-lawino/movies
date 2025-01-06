@@ -19,29 +19,45 @@ class MovieDetail extends StatelessWidget {
       path = 'https://image.freeimages.com/images/large_previews/5eb/movie-clapboard-1184339.jpg';
     }
     return Scaffold(
-      appBar: AppBar(
-        title: Text(movie.title),
-      ),
-      body: SingleChildScrollView(
-        child: Center(
+      body: Center(
           child: Column(
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                height: height / 1.3,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(50), // Match the container's radius
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(40),
+                    bottomRight: Radius.circular(40)
+                  ), // Match the container's radius
                   child: Image.network(
                     path,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
                 ),
+              ),
+              SizedBox(height: 15),
+              Text(movie.title,style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+              SizedBox(height: 15),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Text(movie.releaseDate,style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                      Text('Release Date',style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black45),)
+                    ],
+                  ),
+                  SizedBox(width: 10,),
+                  Column(
+                    children: [
+                      Text(movie.voteAverage.toString(),style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                      Text('Votes',style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black45),)
+                    ],
+                  ),
+                ],
               )
-
             ],
           ),
         ),
-      ),
     );
   }
 }
