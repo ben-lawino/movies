@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Movies',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
-            appBarTheme: AppBarTheme(
-          backgroundColor: Colors.deepOrange,
+        primarySwatch: Colors.blue,
+            appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.blue,
               foregroundColor: Colors.white
       )
       ),
-      home: Home(),
+      home: const Home(),
     );
   }
 }
